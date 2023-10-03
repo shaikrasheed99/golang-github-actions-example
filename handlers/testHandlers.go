@@ -9,6 +9,7 @@ import (
 
 type TestHandler interface {
 	FirstTestHandler(*gin.Context)
+	SecondTestHandler(*gin.Context)
 }
 
 type testHandler struct{}
@@ -19,4 +20,8 @@ func NewTestHandler() TestHandler {
 
 func (th *testHandler) FirstTestHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, constants.FisrtTestAPIMessage)
+}
+
+func (th *testHandler) SecondTestHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, constants.SecondTestAPIMessage)
 }

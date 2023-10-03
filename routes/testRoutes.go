@@ -8,4 +8,5 @@ import (
 
 func RegisterTestRoutes(engine *gin.Engine, th handlers.TestHandler) {
 	engine.GET(constants.FirstTestAPIPath, th.FirstTestHandler)
+	engine.GET(constants.SecondTestAPIPath, th.SecondTestHandler)
 }
