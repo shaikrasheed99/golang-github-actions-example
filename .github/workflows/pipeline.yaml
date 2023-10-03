@@ -22,3 +22,13 @@ jobs:
 
       - name: Build the applicaiton
         run: go build -v ./...
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to repository
+        uses: actions/checkout@v4
+
+      - name: Run the test cases
+        run: go test -v ./...
