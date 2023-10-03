@@ -33,7 +33,16 @@ jobs:
 
   test:
     needs: build
-    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macOS-latest
+          - windows-latest
+
+    runs-on: ${{matrix.os}}
+    
     steps:
       - name: Checkout to repository
         uses: actions/checkout@v4
