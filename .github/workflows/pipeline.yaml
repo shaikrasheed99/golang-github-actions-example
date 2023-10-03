@@ -1,0 +1,24 @@
+name: CI pipeline for Golang application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.19.x'
+
+      - name: Install all the dependencies
+        run: go mod tidy
+
+      - name: Build the applicaiton
+        run: go build -v ./...
