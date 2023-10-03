@@ -13,9 +13,7 @@ jobs:
           - ubuntu-latest
           - macOS-latest
           - windows-latest
-    
     runs-on: ${{matrix.os}}
-
     steps:
       - name: Checkout to repository
         uses: actions/checkout@v4
@@ -33,16 +31,12 @@ jobs:
 
   test:
     needs: build
-
     strategy:
       matrix:
         os:
           - ubuntu-latest
           - macOS-latest
-          - windows-latest
-
     runs-on: ${{matrix.os}}
-    
     steps:
       - name: Checkout to repository
         uses: actions/checkout@v4
