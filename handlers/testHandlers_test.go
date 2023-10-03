@@ -46,3 +46,21 @@ func TestSecondTestHandler(t *testing.T) {
 		assert.Equal(t, constants.SecondTestAPIMessage, resMessage)
 	})
 }
+
+func TestThirdTestHandler(t *testing.T) {
+	t.Run("should be able return third test api with success message", func(t *testing.T) {
+		th := NewTestHandler()
+		router := gin.New()
+		router.GET(constants.ThirdTestAPIPath, th.ThirdTestHandler)
+
+		req, _ := http.NewRequest("GET", constants.ThirdTestAPIPath, nil)
+		res := httptest.NewRecorder()
+		router.ServeHTTP(res, req)
+
+		var resMessage string
+		_ = json.Unmarshal(res.Body.Bytes(), &resMessage)
+
+		assert.Equal(t, http.StatusOK, res.Code)
+		assert.Equal(t, constants.ThirdTestAPIMessage, resMessage)
+	})
+}

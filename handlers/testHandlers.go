@@ -10,6 +10,7 @@ import (
 type TestHandler interface {
 	FirstTestHandler(*gin.Context)
 	SecondTestHandler(*gin.Context)
+	ThirdTestHandler(*gin.Context)
 }
 
 type testHandler struct{}
@@ -24,4 +25,8 @@ func (th *testHandler) FirstTestHandler(c *gin.Context) {
 
 func (th *testHandler) SecondTestHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, constants.SecondTestAPIMessage)
+}
+
+func (th *testHandler) ThirdTestHandler(c *gin.Context) {
+	c.JSON(http.StatusOK, constants.ThirdTestAPIMessage)
 }
