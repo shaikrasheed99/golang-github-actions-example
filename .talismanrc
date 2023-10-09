@@ -1,4 +1,6 @@
 fileignoreconfig:
 - filename: go.sum
   checksum: 93255ca7f0bb82622a897f9442d417f63e479d01dfd83a2aa45820a39d65bc76
+- filename: .github/workflows/pipeline.yaml
+  checksum: becb07cc1d713dd4925a82e966e7952ca57025f01769ceb631616a749fe110f8
 version: ""
