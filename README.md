@@ -2,9 +2,9 @@
 
 ## Jobs created in GitHub actions pipeline
 
-`build` - used to build the whole application
-`test` - used to execute the test cases along with checking the test coverage
-`deploy` - used to deploy the image of this application to [docker hub](https://hub.docker.com/r/shaikrasheed99/golang-github-actions-example)
+- `build` - used to build the whole application
+- `test` - used to execute the test cases along with checking the test coverage
+- `deploy` - used to deploy the image of this application to [docker hub](https://hub.docker.com/r/shaikrasheed99/golang-github-actions-example)
 
 CI pipeline defined in this file - [pipeline.yaml](.github/workflows/pipeline.yaml)
 
